@@ -1,1 +1,467 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dhruv Desai | AI &amp; Quantitative Finance</title>
+  <meta name="description" content="Dhruv Desai is a Solutions Architect at NVIDIA and former BlackRock data scientist working on AI, quantitative finance, fixed income, ETFs, and risk." />
+  <meta name="author" content="Dhruv Desai" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://dhruvd25.github.io/" />
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content="Dhruv Desai | AI &amp; Quantitative Finance" />
+  <meta property="og:description" content="Work and research in quantitative finance, financial AI, fixed income, ETFs, LLM efficiency, and risk." />
+  <meta property="og:url" content="https://dhruvd25.github.io/" />
+  <meta property="og:image" content="https://dhruvd25.github.io/profile_pic.jpg" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Dhruv Desai",
+      "url": "https://dhruvd25.github.io/",
+      "image": "https://dhruvd25.github.io/profile_pic.jpg",
+      "jobTitle": "Solutions Architect",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "NVIDIA"
+      },
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "University of Pennsylvania"
+        },
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Nirma University"
+        }
+      ],
+      "knowsAbout": [
+        "Artificial intelligence",
+        "Quantitative finance",
+        "Capital markets",
+        "Large language models",
+        "Model distillation",
+        "Financial natural language processing",
+        "Fixed income",
+        "ETF trading",
+        "Pricing and liquidity",
+        "Portfolio risk",
+        "Explainable machine learning"
+      ],
+      "sameAs": [
+        "https://scholar.google.com/citations?user=_DPcNCEAAAAJ&hl=en",
+        "https://github.com/dhruvd25",
+        "https://developer.nvidia.com/blog/author/dhruvd/"
+      ]
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --text: #1a1f26;
+      --muted: #5a6570;
+      --line: #d5dde4;
+      --bg: #f7f5f1;
+      --bg-wash: #eef2f5;
+      --link: #1d4f6f;
+      --max: 42rem;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Source Sans 3", Georgia, sans-serif;
+      color: var(--text);
+      background:
+        linear-gradient(180deg, var(--bg-wash) 0%, var(--bg) 28%, var(--bg) 100%);
+      background-attachment: fixed;
+      font-size: 1.05rem;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.15em;
+    }
+
+    a:hover {
+      text-decoration-thickness: 2px;
+    }
+
+    .page {
+      width: min(100% - 2rem, var(--max));
+      margin: 0 auto;
+      padding: 3.5rem 0 4.5rem;
+    }
+
+    header {
+      margin-bottom: 2.75rem;
+    }
+
+    .identity {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+
+    .portrait {
+      width: 7.5rem;
+      height: 7.5rem;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center 20%;
+      flex-shrink: 0;
+      background: var(--line);
+    }
+
+    .identity-text {
+      min-width: 0;
+    }
+
+    h1 {
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: clamp(2.4rem, 7vw, 3.1rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+
+    @media (max-width: 520px) {
+      .identity {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    .affiliation {
+      margin-top: 0.65rem;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .contact-details {
+      display: grid;
+      gap: 0.3rem;
+      margin-top: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .contact-row {
+      display: grid;
+      grid-template-columns: 3.5rem minmax(0, 1fr);
+      gap: 0.6rem;
+      align-items: baseline;
+    }
+
+    .contact-label {
+      color: var(--muted);
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem 1rem;
+    }
+
+    .bio {
+      margin-top: 1.5rem;
+      max-width: 38rem;
+    }
+
+    section {
+      margin-top: 2.75rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--line);
+    }
+
+    h2 {
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.1rem;
+    }
+
+    h3 {
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.85rem;
+    }
+
+    .about p + p {
+      margin-top: 0.85rem;
+    }
+
+    .work-group + .work-group {
+      margin-top: 2rem;
+    }
+
+    .edu + .edu {
+      margin-top: 0.85rem;
+    }
+
+    .edu-degree {
+      font-weight: 600;
+    }
+
+    .edu-meta {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .pubs {
+      list-style: none;
+    }
+
+    .pubs li {
+      padding: 0.85rem 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .pubs li:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .pubs li:last-child {
+      padding-bottom: 0;
+    }
+
+    .pub-title {
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 1.02rem;
+      line-height: 1.4;
+    }
+
+    .pub-meta {
+      margin-top: 0.25rem;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .technical-writing a {
+      font-weight: 500;
+    }
+
+    .technical-writing p + p {
+      margin-top: 0.75rem;
+    }
+
+    .technical-writing .meta {
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--line);
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="identity">
+        <img class="portrait" src="profile_pic.jpg" alt="Portrait of Dhruv Desai" width="120" height="120" />
+        <div class="identity-text">
+          <h1>Dhruv Desai</h1>
+          <p class="affiliation">Solutions Architect, NVIDIA</p>
+          <div class="contact-details">
+            <div class="contact-row">
+              <span class="contact-label">Email</span>
+              <span>dhruvdesai [at] alumni [dot] upenn [dot] edu</span>
+            </div>
+            <div class="contact-row">
+              <span class="contact-label">Links</span>
+              <nav class="links" aria-label="Profiles">
+                <a href="https://scholar.google.com/citations?user=_DPcNCEAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+                <a href="https://github.com/dhruvd25" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://developer.nvidia.com/blog/author/dhruvd/" target="_blank" rel="noopener">NVIDIA Blog</a>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="about">
+      <h2>About</h2>
+      <p>
+        I am a Solutions Architect at NVIDIA. My work spans the AI stack for
+        quantitative finance, from model and algorithm development to
+        hardware-aware optimization. My recent work explores LLM distillation,
+        parameter-efficient fine-tuning (PEFT), optimizer design, and
+        GPU-accelerated methods for large-scale portfolio and risk modeling. I am
+        particularly interested in identifying quantitative
+        workloads that can benefit from accelerated computing and improving the
+        efficiency of established methods. I have also worked on explainable
+        machine learning, similarity learning, and graph-based methods for
+        financial applications.
+      </p>
+      <p>
+        Previously, I was a Data Scientist with the Investment AI team at
+        BlackRock, where I built trading, pricing, and liquidity algorithms for
+        fixed-income asset classes and ETF trading. Before that, I was a Senior
+        Machine Learning Engineer at Vanguard, building end-to-end machine
+        learning systems.
+      </p>
+    </section>
+
+    <section>
+      <h2>Research &amp; Writing</h2>
+
+      <div class="work-group">
+        <h3>Papers</h3>
+        <ol class="pubs">
+        <li>
+          <div class="pub-title">
+            <a href="https://arxiv.org/abs/2607.24518" target="_blank" rel="noopener">Low-Rank Dependence Decomposition via Accelerated Symmetric Non-negative Matrix Factorization</a>
+          </div>
+          <div class="pub-meta">arXiv, 2026.</div>
+        </li>
+        <li>
+          <div class="pub-title">
+            <a href="https://arxiv.org/abs/2606.24747" target="_blank" rel="noopener">Scaling Laws for Task-Specific LLM Distillation</a>
+          </div>
+          <div class="pub-meta">arXiv, 2026.</div>
+        </li>
+        <li>
+          <div class="pub-title">
+            <a href="https://arxiv.org/abs/2408.06679" target="_blank" rel="noopener">Case-based explainability for random forest: Prototypes, critics, counter-factuals and semi-factuals</a>
+          </div>
+          <div class="pub-meta">ACM ICAIF, 2025.</div>
+        </li>
+        <li>
+          <div class="pub-title">
+            <a href="https://arxiv.org/abs/2308.08031" target="_blank" rel="noopener">Company similarity using large language models</a>
+          </div>
+          <div class="pub-meta">IEEE CIFEr, 2024.</div>
+        </li>
+        <li>
+          <div class="pub-title">
+            <a href="https://arxiv.org/abs/2408.02355" target="_blank" rel="noopener">Quantile regression using random forest proximities</a>
+          </div>
+          <div class="pub-meta">ACM ICAIF, 2024.</div>
+        </li>
+        <li>
+          <div class="pub-title">
+            <a href="https://arxiv.org/abs/2408.02684" target="_blank" rel="noopener">Open set recognition for random forest</a>
+          </div>
+          <div class="pub-meta">ACM ICAIF, 2024.</div>
+        </li>
+        <li>
+          <div class="pub-title">
+            <a href="https://arxiv.org/abs/2207.04368" target="_blank" rel="noopener">Supervised similarity learning for corporate bonds using Random Forest proximities</a>
+          </div>
+          <div class="pub-meta">ACM ICAIF, 2022.</div>
+        </li>
+        <li>
+          <div class="pub-title">
+            <a href="https://arxiv.org/abs/2106.12987" target="_blank" rel="noopener">Fund2vec: mutual funds similarity using graph learning</a>
+          </div>
+          <div class="pub-meta">ACM ICAIF, 2021.</div>
+        </li>
+        <li>
+          <div class="pub-title">
+            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=_DPcNCEAAAAJ&citation_for_view=_DPcNCEAAAAJ:2osOgNQ5qMEC" target="_blank" rel="noopener">On robustness of mutual funds categorization and distance metric learning</a>
+          </div>
+          <div class="pub-meta"><em>The Journal of Financial Data Science</em>, 2021.</div>
+        </li>
+        <li>
+          <div class="pub-title">
+            <a href="https://arxiv.org/abs/2006.00123" target="_blank" rel="noopener">Machine learning fund categorizations</a>
+          </div>
+          <div class="pub-meta">ACM ICAIF, 2020.</div>
+        </li>
+        </ol>
+        <p style="margin-top: 1.25rem; font-size: 0.95rem;">
+          <a href="https://scholar.google.com/citations?user=_DPcNCEAAAAJ&hl=en&view_op=list_works&sortby=pubdate" target="_blank" rel="noopener">Full list on Google Scholar →</a>
+        </p>
+      </div>
+
+      <div class="work-group technical-writing">
+        <h3>Blogs</h3>
+        <p>
+          <a href="https://developer.nvidia.com/blog/synthetic-data-generation-for-financial-ai-research-with-nvidia-nemo/" target="_blank" rel="noopener">Synthetic Data Generation for Financial AI Research with NVIDIA NeMo</a>
+          <span class="meta"> — NVIDIA Technical Blog</span>
+        </p>
+        <p>
+          <a href="https://developer.nvidia.com/blog/build-efficient-financial-data-workflows-with-ai-model-distillation/" target="_blank" rel="noopener">Build Efficient Financial Data Workflows with AI Model Distillation</a>
+          <span class="meta"> — NVIDIA Technical Blog</span>
+        </p>
+      </div>
+
+      <div class="work-group">
+        <h3>Talks</h3>
+        <ol class="pubs">
+          <li>
+            <div class="pub-title">
+              <a href="https://www.nvidia.com/en-us/on-demand/session/gtc26-s81522/" target="_blank" rel="noopener">Distillation Recipes and Synthetic Data Fine-Tuning for Algorithmic Trading</a>
+            </div>
+            <div class="pub-meta">NVIDIA GTC, 2026.</div>
+          </li>
+          <li>
+            <div class="pub-title">
+              <a href="https://www.nvidia.com/en-us/on-demand/session/gtcdc25-dct51154/" target="_blank" rel="noopener">KAN-Casting: Kolmogorov-Arnold Networks for Interpretable Time Series Forecasting</a>
+            </div>
+            <div class="pub-meta">NVIDIA GTC Washington, D.C., 2025.</div>
+          </li>
+        </ol>
+      </div>
+
+      <div class="work-group">
+        <h3>Patents</h3>
+        <ol class="pubs">
+          <li>
+            <div class="pub-title">
+              <a href="https://patents.google.com/patent/US12517984B1" target="_blank" rel="noopener">Learning categorization with natural language processing networks</a>
+            </div>
+            <div class="pub-meta">U.S. Patent 12,517,984.</div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <div class="edu">
+        <div class="edu-degree">M.S., Electrical Engineering</div>
+        <div class="edu-meta">University of Pennsylvania · 2019</div>
+      </div>
+      <div class="edu">
+        <div class="edu-degree">B.Tech., Electronics and Communication Engineering (ECE)</div>
+        <div class="edu-meta">Nirma University · 2017</div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Dhruv Desai
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
