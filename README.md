@@ -9,8 +9,9 @@ The Pages workflow refreshes content before every deployment and on Mondays at
 
 - Blog posts are loaded from Dhruv's NVIDIA Technical Blog author record.
 - New arXiv papers are discovered by author name, relevant subject categories,
-  and finance-related terms. The discovery date starts after the newest paper
-  currently curated on the page, so older omitted papers are not added.
+  and either finance-related terms or known research collaborators. The
+  discovery date starts after the newest paper currently curated on the page,
+  so older omitted papers are not added.
 
 Existing paper venue labels remain manually curated. Newly discovered papers
 are labeled `arXiv, YEAR` until their publication details are updated.

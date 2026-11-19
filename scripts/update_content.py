@@ -26,6 +26,15 @@ NVIDIA_AUTHOR_ID = 3071
 ARXIV_AUTHOR = "Dhruv Desai"
 ARXIV_DISCOVERY_START = datetime.fromisoformat("2026-07-27T14:56:00+00:00")
 USER_AGENT = "dhruvd25.github.io content updater/1.0"
+TRUSTED_COAUTHORS = {
+    "Dhagash Mehta",
+    "Dimitris Vamvourellis",
+    "Ioana Boier",
+    "Lavinia Ghita",
+    "Mingshu Li",
+    "Saleh Ashkboos",
+    "Stefano Pasquali",
+}
 
 FINANCE_TERMS = re.compile(
     r"\b(finance|financial|portfolio|portfolios|trading|markets?|assets?|"
@@ -144,7 +153,10 @@ def parse_arxiv_papers(payload: bytes) -> list[Paper]:
         summary = " ".join(
             entry.findtext("atom:summary", default="", namespaces=ATOM).split()
         )
-        if not FINANCE_TERMS.search(f"{title} {summary}"):
+        has_trusted_coauthor = bool(
+            (authors - {ARXIV_AUTHOR}) & TRUSTED_COAUTHORS
+        )
+        if not FINANCE_TERMS.search(f"{title} {summary}") and not has_trusted_coauthor:
             continue
 
         identifier = entry.findtext("atom:id", default="", namespaces=ATOM)

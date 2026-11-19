@@ -38,7 +38,7 @@ class ContentUpdaterTests(unittest.TestCase):
 
         self.assertEqual(["Newer", "Older & useful"], [post.title for post in posts])
 
-    def test_filters_same_name_arxiv_authors_by_topic(self):
+    def test_filters_namesakes_but_keeps_trusted_collaborations(self):
         payload = b"""<?xml version="1.0" encoding="UTF-8"?>
         <feed xmlns="http://www.w3.org/2005/Atom">
           <entry>
@@ -47,6 +47,15 @@ class ContentUpdaterTests(unittest.TestCase):
             <summary>Risk modeling for large portfolios.</summary>
             <published>2026-07-27T14:56:00Z</published>
             <category term="cs.LG"/>
+            <author><name>Dhruv Desai</name></author>
+          </entry>
+          <entry>
+            <id>http://arxiv.org/abs/2611.14850v1</id>
+            <title>Effective Teacher Support for Reasoning Distillation</title>
+            <summary>Improving language-model distillation efficiency.</summary>
+            <published>2026-11-11T00:00:00Z</published>
+            <category term="cs.AI"/>
+            <author><name>Lavinia Ghita</name></author>
             <author><name>Dhruv Desai</name></author>
           </entry>
           <entry>
@@ -61,7 +70,10 @@ class ContentUpdaterTests(unittest.TestCase):
 
         papers = parse_arxiv_papers(payload)
 
-        self.assertEqual(["2607.24518"], [paper.arxiv_id for paper in papers])
+        self.assertEqual(
+            ["2611.14850", "2607.24518"],
+            [paper.arxiv_id for paper in papers],
+        )
 
     def test_replaces_blogs_and_prepends_new_papers(self):
         index = f"""<ol>
